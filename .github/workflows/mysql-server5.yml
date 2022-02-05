@@ -33,7 +33,7 @@ jobs:
         with:
           context: "{{defaultContext}}:mysql-server/5.7"
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           tags: ghcr.io/jerson/docker-mysql/mysql-server:5.7,ghcr.io/jerson/docker-mysql/mysql-server:5
           labels: ${{ steps.meta.outputs.labels }}
       - run: echo ${{ steps.docker_build.outputs.digest }}
