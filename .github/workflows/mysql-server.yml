@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: "{{defaultContext}}:mysql-server/8.0"
-          file: mysql-server/Dockerfile
+          file: mysql-server/8.0/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/jerson/docker-mysql/mysql-server:8.0,ghcr.io/jerson/docker-mysql/mysql-server:8
