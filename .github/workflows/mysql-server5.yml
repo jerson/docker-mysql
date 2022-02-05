@@ -9,7 +9,7 @@ on:
       - 'master'
   workflow_dispatch: 
 
-name: Build Docker Image MySQLServer5
+name: Docker Image MySQLServer5
 jobs:
   build:
     runs-on: ubuntu-20.04
