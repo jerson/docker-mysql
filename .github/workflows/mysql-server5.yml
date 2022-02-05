@@ -9,9 +9,9 @@ on:
       - 'master'
   workflow_dispatch: 
 
-name: MySQLServer5
+name: Build Docker Image MySQLServer5
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
