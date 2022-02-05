@@ -30,10 +30,10 @@ jobs:
       - id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: "{{defaultContext}}:mysql-server"
           file: mysql-server/Dockerfile
-          context: mysql-server
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
-          tags: 8.0
+          tags: ghcr.io/jerson/docker-mysql/mysql-server:8.0,ghcr.io/jerson/docker-mysql/mysql-server:8
           labels: ${{ steps.meta.outputs.labels }}
       - run: echo ${{ steps.docker_build.outputs.digest }}
